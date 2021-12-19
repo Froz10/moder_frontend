@@ -244,16 +244,6 @@ GEM
       rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     semantic_range (3.0.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
@@ -281,10 +271,6 @@ GEM
     table_print (1.5.7)
     test-prof (1.0.2)
     thor (1.1.0)
-    tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
@@ -333,7 +319,6 @@ DEPENDENCIES
   rails (~> 6.1.3)
   redis (~> 4.0)
   rspec-rails
-  sass-rails (>= 6)
   simple_form
   simple_form-tailwind
   spring
@@ -342,7 +327,6 @@ DEPENDENCIES
   standard
   table_print
   test-prof
-  turbolinks
   tzinfo-data
   web-console (>= 4.1.0)
   webpacker (= 6.0.0.rc.6)
