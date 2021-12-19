@@ -15,11 +15,9 @@ gem "pg"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.3"
 gem "redis", "~> 4.0"
-gem "sass-rails", ">= 6"
 gem "simple_form"
 gem "simple_form-tailwind"
 gem "table_print"
-gem "turbolinks"
 gem 'webpacker', '6.0.0.rc.6'
 
 group :development, :test do
