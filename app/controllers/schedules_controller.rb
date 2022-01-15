@@ -8,6 +8,7 @@
 #---
 class SchedulesController < ApplicationController
   def show
+    byebug
     @concerts = Concert.includes(:venue, gigs: :band).all
     @schedule = Schedule.from_concerts(@concerts)
     @schedule.hide(params[:hidden]&.split(",") || [])
