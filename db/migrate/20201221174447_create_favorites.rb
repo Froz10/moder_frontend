@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/nrclient for more book information.
 #---
-class CreateFavorites < ActiveRecord::Migration[6.1]
+class CreateFavorites < ActiveRecord::Migration[7.0]
   def change
     create_table(:favorites) do |t|
       t.references(:user, null: false, foreign_key: true)

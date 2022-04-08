@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/nrclient for more book information.
 #---
-class CreateGigs < ActiveRecord::Migration[6.1]
+class CreateGigs < ActiveRecord::Migration[7.0]
   def change
     create_table(:gigs) do |t|
       t.references(:band, null: false, foreign_key: true)

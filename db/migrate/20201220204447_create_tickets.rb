@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/nrclient for more book information.
 #---
-class CreateTickets < ActiveRecord::Migration[6.1]
+class CreateTickets < ActiveRecord::Migration[7.0]
   def change
     create_enum(:enum_status, %w[unsold held purchased refunded])
 
@@ -15,7 +15,7 @@ class CreateTickets < ActiveRecord::Migration[6.1]
       t.integer(:row)
       t.integer(:number)
       t.references(:user, null: true, foreign_key: true)
-      t.enum(:status, enum_name: :enum_status)
+      t.enum(:status, enum_type: :enum_status)
       t.references(:ticket_order)
       t.timestamps
     end

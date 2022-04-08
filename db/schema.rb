@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_174447) do
-
+ActiveRecord::Schema[7.0].define(version: 2020_12_21_174447) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.string "name"
     t.text "description"
     t.text "genre_tags"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "concerts", force: :cascade do |t|
@@ -48,18 +47,18 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.datetime "start_time"
     t.bigint "venue_id", null: false
     t.text "genre_tags"
-    t.enum "ilk", enum_name: "enum_ilk"
-    t.enum "access", enum_name: "enum_access"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.enum "ilk", enum_type: "enum_ilk"
+    t.enum "access", enum_type: "enum_access"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["venue_id"], name: "index_concerts_on_venue_id"
   end
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "concert_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["concert_id"], name: "index_favorites_on_concert_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
@@ -69,16 +68,16 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.bigint "concert_id", null: false
     t.integer "order"
     t.integer "duration_minutes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["band_id"], name: "index_gigs_on_band_id"
     t.index ["concert_id"], name: "index_gigs_on_concert_id"
   end
 
   create_table "shopping_carts", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
 
@@ -87,8 +86,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.integer "status", default: 0
     t.integer "count", default: 0
     t.integer "shopping_cart_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["concert_id"], name: "index_ticket_orders_on_concert_id"
   end
 
@@ -97,10 +96,10 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.integer "row"
     t.integer "number"
     t.bigint "user_id"
-    t.enum "status", enum_name: "enum_status"
+    t.enum "status", enum_type: "enum_status"
     t.bigint "ticket_order_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["concert_id"], name: "index_tickets_on_concert_id"
     t.index ["ticket_order_id"], name: "index_tickets_on_ticket_order_id"
     t.index ["user_id"], name: "index_tickets_on_user_id"
@@ -113,8 +112,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -124,8 +123,8 @@ ActiveRecord::Schema.define(version: 2020_12_21_174447) do
     t.text "description"
     t.integer "rows"
     t.integer "seats_per_row"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "concerts", "venues"
