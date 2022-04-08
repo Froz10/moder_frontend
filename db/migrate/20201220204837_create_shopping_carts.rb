@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/nrclient for more book information.
 #---
-class CreateShoppingCarts < ActiveRecord::Migration[6.1]
+class CreateShoppingCarts < ActiveRecord::Migration[7.0]
   def change
     create_table(:shopping_carts) do |t|
       t.references(:user, null: false, foreign_key: true)

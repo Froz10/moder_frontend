@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/nrclient for more book information.
 #---
-class CreateConcerts < ActiveRecord::Migration[6.1]
+class CreateConcerts < ActiveRecord::Migration[7.0]
   def change
     create_enum(:enum_ilk, %w[concert meet_n_greet battle])
     create_enum(:enum_access, %w[general members vips])
@@ -17,8 +17,8 @@ class CreateConcerts < ActiveRecord::Migration[6.1]
       t.datetime(:start_time)
       t.references(:venue, null: false, foreign_key: true)
       t.text(:genre_tags)
-      t.enum(:ilk, enum_name: :enum_ilk)
-      t.enum(:access, enum_name: :enum_access)
+      t.enum(:ilk, enum_type: :enum_ilk)
+      t.enum(:access, enum_type: :enum_access)
 
       t.timestamps
     end

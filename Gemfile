@@ -14,7 +14,7 @@ gem "jbuilder", "~> 2.7"
 gem "hotwire-rails"
 gem "pg"
 gem "puma", "~> 5.0"
-gem "rails", "~> 6.1.3"
+gem "rails", '7.0.2.3'
 gem "redis", "~> 4.0"
 gem "simple_form"
 gem "simple_form-tailwind"
