@@ -11,17 +11,17 @@ gem "date_by_example"
 gem "devise"
 gem "gon"
 gem "jbuilder", "~> 2.7"
-gem "hotwire-rails"
 gem "pg"
 gem "puma", "~> 5.0"
-gem 'sprockets-rails', '~> 3.4'
-gem 'jsbundling-rails', '~> 1.0'
-gem 'cssbundling-rails', '~> 1.0'
-gem "rails", '7.0.2.3'
+gem "propshaft", "~> 0.6"
+gem "jsbundling-rails", "~> 1.0"
+gem "cssbundling-rails", "~> 1.0"
+gem "rails", "7.0.2.3"
 gem "redis", "~> 4.0"
 gem "simple_form"
 gem "simple_form-tailwind"
 gem "table_print"
+gem "turbo-rails", "~> 1.0"
 
 group :development, :test do
   gem "cypress-rails"
