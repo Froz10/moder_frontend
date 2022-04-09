@@ -99,7 +99,7 @@ ActiveRecord::Base.transaction do
     end
 
     concert.update(
-      genre_tags: concert.bands.flat_map(&:genres).uniq.join(","),
+      genre_tags: concert.bands.flat_map(&:genres).uniq.join(",")
     )
 
     concert.venue.rows.times do |row_number|
